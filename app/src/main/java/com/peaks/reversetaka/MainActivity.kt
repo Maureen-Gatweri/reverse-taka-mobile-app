@@ -13,15 +13,21 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-        binding.etSignIn.setOnClickListener{
-            val intent=Intent(this,SignUp::class.java)
+        binding.etSignIn.setOnClickListener {
+            val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
         }
-        binding.btnPayments.setOnClickListener{
+        binding.btnPayments.setOnClickListener {
             validateRegistration()
+
+        }
+        binding.btnPayments.setOnClickListener{
+            val intent=Intent(this,LandingPage::class.java)
+            startActivity(intent)
+
         }
 
     }
